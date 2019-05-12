@@ -990,9 +990,6 @@ th {
 .glyphicon-option-vertical:before {
   content: "\e235";
 }
-.glyphicon-menu-hamburger:before {
-  content: "\e236";
-}
 .glyphicon-modal-window:before {
   content: "\e237";
 }
