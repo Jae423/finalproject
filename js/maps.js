@@ -128,7 +128,7 @@ map.on('style.load', function() {
   // this sets up the geojson as a source in the map, which I can use to add visual layers
   map.addSource('plutouh', {
     type: 'geojson',
-    data: './data/plutouh.geojson',
+    data: 'data/plutouh.geojson',
   });
 
   // add a custom-styled layer for tax lots
