@@ -25,6 +25,8 @@
       <link href="lib/cubeportfolio/cubeportfolio.css" rel="stylesheet">
       <link href="lib/superslides/superslides.css" rel="stylesheet">
       <link href="css/slider.css" rel="stylesheet">
+      <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css" rel="stylesheet" />
+      <link rel="stylesheet" href="css/maps.css">
 
 
     <!-- Main Stylesheet File -->
@@ -49,11 +51,11 @@
     <div class="container">
       <div class="row mt presentation">
         <img class="camera aligncenter" src="img/camera.png" alt="">
-        <h1 class="centered"> Strategies for Adaptive Reuse</h1>
+        <h1 class="centered"> About <br> Gould Memorial <br> Library (GML)</h1>
         <hr>
 
         <div class="col-lg-4 col-md-4">
-          <h3>About Gould Memorial Library (GML)</h3>
+          <h3>The Need for a New Use</h3>
         </div>
 
         <div class="col-lg-4 col-md-4">
@@ -218,15 +220,87 @@
 <!-- END Section 2: BUILDING HISTORY-->
 
 
+<!-- START Section 3: EXISTING CONDITIONS-->
+<section>
+  <br>
+  <br>
+      <div class="row mt presentation">
+        <h1 class="centered"> Neighborhood Context </h1>
+        <br>
+      </div>
+
+      <div id="mapContainer">
+        <div id="sidebar">
+          <div class="info-box">
+            <!-- These buttons use data attributes, which we can easily pull using jquery -->
+            <button class="flyto" data-neighborhood="gml">Gould Memorial Library</button>
+            <button class="flyto" data-neighborhood="jeromeave">Jerome Avenue Rezoning</button>
+          </div>
+          <div class="info-box">
+            <h3>University Heights Neighborhood</h3>
+            <span id="address">Trace your mouse over a lot to get the
+              built FAR and find out if the lot is a landmark! </span><br>
+            <h4>Is it a landmark?</h4>
+            <span id="landmark"> </span>
+            <h4>Built FAR:</h4>
+            <span id="builtfar"></span>
+          </div>
+
+          <div class="info-box legend" align =left>
+            <h3>Legend</h3>
+            <!-- We'll programmatically make the legend here -->
+          </div>
+        </div>
+      </div>
+  </section>
+
+<!-- END Section 3: Exisitng Conditions-->
+
+
+
+<!-- START Section 2: BUILDING HISTORY-->
+<div class="container">
   <div class="row mt presentation">
-    <h1 class="centered"> Building Context </h1>
-    <br>
+    <img class="camera aligncenter" src="img/camera.png" alt="">
+    <h1 class="centered"> Strategies for Reuse</h1>
+    <hr>
+
+    <div class="col-lg-4 col-md-4">
+      <h3>Processes and Research</h3>
+    </div>
+
+    <div class="col-lg-4 col-md-4">
+      <p>Situated on the CUNY Bronx Community College (BCC) campus, Gould Memorial Library is a stunning nationally landmarked building that fell into disrepair during the disinvestment of the Bronx in 1970’s. GML, modeled after the Pantheon in Rome, was constructed by the renowned architect Stanford White of McKim, Mead and White and the facility is recognized as among the supreme examples of White’s work. While the original purpose of the facility was to serve as a library, GML’s collection outgrew the building’s physical space. </p>
+    </div>
+
+    <div class="col-lg-4 col-md-4">
+      <p> Now, with the primary function no longer present in the facility, the main spaces remain largely vacant. The building is in need of restoration that is estimated to cost of $90 million. The future use of the edifice needs to be a compelling one for both the students and for the community. This website explores the context of the rehabilitation in order to inform adaptive reuse strategies and serve as a platform for information about the building’s adaptive reuse.</p>
+    </div>
   </div>
-</section>
+
+      <div class="container">
+        <div class="row mt presentation">
+          <div class="col-lg-4 col-md-4">
+        <h3>Potential Reuses of the Building</h3>
+        </div>
+      </div>
+      </div>
+
+
+
+<!-- END Section 2: BUILDING HISTORY-->
+
+
+
+
 
 
 <!-- CREDITS-->
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <section id="end" class="section-footer">
   <div class="container centered ptb">
     <div class="col-md-6 col-md-offset-3">
@@ -253,6 +327,12 @@
   <script src="lib/fullpage-menu/fullpage-menu.js"></script>
   <script src="lib/photostack/photostack.js"></script>
   <script src="lib/superslides/superslides.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="js/maps.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
