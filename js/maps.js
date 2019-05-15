@@ -6,7 +6,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamVsbGkxMCIsImEiOiJjanVkOXE0b3IwdDM4NDRxcmw3Z
 var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/satellite-streets-v9',
-  center: [-73.9071936,40.8556418],
+  center: [-73.9260827,40.8526755],
   zoom: 14,
 });
 
@@ -101,8 +101,10 @@ for (var i=1; i<12; i++) {
 
 // a little object for looking up neighborhood center points
 var neighborHoodLookup = {
-  'gml': [-73.9136779, 40.8587651],
+  'gml': [-73.915066, 40.8587175],
   'jeromeave': [-73.9042463, 40.8584254],
+  'sboul': [-73.9042463, 40.8584254],
+  'reset': [-73.9260827,40.8526755],
 }
 
 
@@ -245,8 +247,6 @@ map.on('style.load', function() {
       // use jquery to display the address and land use description to the sidebar
       $('#address').text(lot.properties.address);
       $('#landmark').text(lot.properties.landmark);
-      $('#builtfar').text(lot.properties.builtfar);
-
 
       // set this lot's polygon feature as the data for the highlight source
       map.getSource('highlight-feature').setData(lot.geometry);
@@ -260,4 +260,25 @@ map.on('style.load', function() {
       });
     }
   })
+})
+
+var popup = new mapboxgl.Popup({ offset: 10 })
+
+var marker = new mapboxgl.Marker()
+  .setLngLat([-73.9141477,40.8587517])
+  .addTo(map);
+
+studentPizzaShops.forEach(function(studentData) {
+
+
+  if (lot) {  // if there's a lot under the mouse, do stuff
+    map.getCanvas().style.cursor = 'pointer';} // make the cursor a pointer
+
+  new mapboxgl.Marker({
+    color: thisStudentsColor,
+  })
+    .setLngLat([studentData.lng, studentData.lat])
+    .setPopup(new mapboxgl.Popup({ offset: 40 })
+      .setText(`${studentData.name} says their favorite pizza shop is ${studentData.favoritepizzashop}`))
+    .addTo(map);
 })
