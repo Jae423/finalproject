@@ -241,6 +241,10 @@ map.on('style.load', function() {
     if (lot) {  // if there's a lot under the mouse, do stuff
       map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
 
+
+// if address is BCC, then display a popup when lot is clicked
+    if (lot) {
+         if (plutouh.address === '1930 SEDGWICK AVENUE') .setPopup(new mapboxgl.Popup();}
       // lookup the corresponding description for the land use code
       var landuseDescription = LandUseLookup(parseInt(lot.properties.landuse)).description;
 
