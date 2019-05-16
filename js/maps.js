@@ -229,14 +229,14 @@ map.on('style.load', function() {
 
   // add a layer for the highlighted lot
   map.addLayer({
-    filterBY(PROJECT_NAME =='Jerome Avenue Rezoning')
     id: 'jeromeave',
     type: 'fill',
     source: 'jerome',
     paint: {
       'fill-color': 'blue',
     }
-  });
+    filter: ['==', 'PROJECT_NAME', 'Jerome Avenue Rezoning']
+});
 
   // add a layer for the highlighted lot
 
