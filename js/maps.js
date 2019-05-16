@@ -132,9 +132,9 @@ map.on('style.load', function() {
   map.setPaintProperty('water', 'fill-color', '#003366')
 
   // this sets up the geojson as a source in the map
-  map.addSource('plutouh', {
+  map.addSource('pluto', {
     type: 'geojson',
-    data: 'data/plutouh.geojson',
+    data: 'data/pluto.geojson',
   });
 
   // this sets up the geojson as a source in the map
@@ -145,9 +145,9 @@ map.on('style.load', function() {
 
   // add a custom-styled layer for tax lots
   map.addLayer({
-    id: 'plutouh-fill',
+    id: 'pluto-fill',
     type: 'fill',
-    source: 'plutouh',
+    source: 'pluto',
     paint: {
       'fill-opacity': 0.7,
       'fill-color': {
@@ -207,9 +207,9 @@ map.on('style.load', function() {
 
   // add an outline to the tax lots which is only visible after zoom level 14.8
   map.addLayer({
-    id: 'plutouh-line',
+    id: 'pluto-line',
     type: 'line',
-    source: 'plutouh',
+    source: 'pluto',
     paint: {
       'line-opacity': 0.7,
       'line-color': 'gray',
@@ -262,7 +262,7 @@ map.on('style.load', function() {
   map.on('mousemove', function(e) {
     // query for the features under the mouse, but only in the lots layer
     var features = map.queryRenderedFeatures(e.point, {
-      layers: ['plutouh-fill'],
+      layers: ['pluto-fill'],
     });
 
     // get the first feature from the array of returned features.
@@ -301,7 +301,7 @@ var marker = new mapboxgl.Marker()
   .addTo(map);
 
 // how do i incorporate the click
-if (plutouh.address === '1930 SEDGWICK AVENUE') {
+if (pluto.properties.address === '1930 SEDGWICK AVENUE') {
   new mapboxgl.Popup({
       offset: 10
     })
