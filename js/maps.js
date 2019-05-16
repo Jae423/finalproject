@@ -7,12 +7,17 @@ var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/satellite-streets-v9',
   center: [-73.9260827, 40.8526755],
+  scrollWheelZoom: false,
   zoom: 14,
 });
 
+if (map.scrollWheelZoom) {
+  map.scrollWheelZoom.disable();
+}
+
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
-map.scrollWheelZoom.disable();
+
 // a helper function for looking up colors and descriptions for NYC land use codes
 var LandUseLookup = (code) => {
   switch (code) {
