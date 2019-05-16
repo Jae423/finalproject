@@ -14,15 +14,16 @@ to inform our recommendations, gaining visual context of the landmarked site cou
 and having a comprehensive location via the website for all of this information would be
 helpful as well.
 
-OUTLINE OF THIS PAGE:
 
-Long scroll web page. Removed template menu.
-Section 1:Strategies for Adaptive Reuse at GML
-	- About - text
+
+OUTLINE OF THIS PAGE:
+Section 1: About
+	- Text about GML
 	- Quick Explore Gallery - interactive
 Section 2: Building History
 	- Animated Timeline with key dates (animated, text)
-Section 3: Our process
+Section 3:Process
+	- Text about process
 Section 4: Neighborhood Context Map
 			- Display land use
 			- Show address and landmark status
@@ -31,6 +32,7 @@ Section 4: Neighborhood Context Map
 			- Fly to: BCC overall
 Section 5: Recommendations
 			- Four uses:  is a blurb about them
+			- Icons can be seen larger
 
 
 			PROJECT REFERENCES:
