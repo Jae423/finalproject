@@ -103,6 +103,7 @@ for (var i = 1; i < 12; i++) {
 var neighborHoodLookup = {
   'gml': [-73.915066, 40.8587175],
   'jeromeave': [-73.9042463, 40.8584254],
+  'bcc': [-73.9141889, 40.8572386],
 }
 
 
@@ -121,7 +122,7 @@ map.on('style.load', function() {
     // fly to the neighborhood's center point
     map.flyTo({
       center: center,
-      zoom: 17
+      zoom: 16.5
     });
   });
 
@@ -286,22 +287,14 @@ map.on('style.load', function() {
 })
 
 
-var popup = new mapboxgl.Popup({
-  offset: 10
-})
+var popup = new mapboxgl.Popup({ offset: 40 })
+  .setText('Gould Memorial Library');
 
 var marker = new mapboxgl.Marker()
   .setLngLat([-73.9141477, 40.8587517])
+  .setPopup(popup)
   .addTo(map);
 
-// how do i incorporate the click
-if (pluto.properties.address === '1930 SEDGWICK AVENUE') {
-  new mapboxgl.Popup({
-      offset: 10
-    })
-    .setLngLat(-73.9141477, 40.8587517)
-    .addTo(map);
-}
 
   if (lot) { // if there's a lot under the mouse, do stuff
     map.getCanvas().style.cursor = 'pointer';
