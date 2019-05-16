@@ -50,7 +50,7 @@ div.body {
 }
 img {
 	height: auto;
-	max-width: 100%;
+	max-width: 105%;
 }
 .hidden { display: none; }
 .alignleft { float: left; }
