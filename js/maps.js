@@ -127,10 +127,6 @@ map.on('style.load', function() {
     });
   });
 
-  // let's hack the basemap style a bit
-  // you can use map.getStyle() in the console to inspect the basemap layers
-  map.setPaintProperty('water', 'fill-color', '#003366')
-
   // this sets up the geojson as a source in the map
   map.addSource('pluto', {
     type: 'geojson',
@@ -233,13 +229,12 @@ map.on('style.load', function() {
 
   // add a layer for the highlighted lot
   map.addLayer({
-    id: 'highlight-line',
-    type: 'line',
-    source: 'highlight-feature',
+    filterBY(PROJECT_NAME =='Jerome Avenue Rezoning')
+    id: 'jeromeave',
+    type: 'fill',
+    source: 'jerome',
     paint: {
-      'line-width': 3,
-      'line-opacity': 0.9,
-      'line-color': 'black',
+      'fill-color': 'blue',
     }
   });
 
