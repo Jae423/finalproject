@@ -103,9 +103,10 @@ for (var i=1; i<12; i++) {
 var neighborHoodLookup = {
   'gml': [-73.915066, 40.8587175],
   'jeromeave': [-73.9042463, 40.8584254],
-  'sboul': [-73.9042463, 40.8584254],
-  'reset': [-73.9260827,40.8526755],
+  'sboul': [-73.8977228, 40.8354029],
+  'reset':  [-73.916989, 40.8558595]
 }
+
 
 
 // we can't add our own sources and layers until the base style is finished loading
