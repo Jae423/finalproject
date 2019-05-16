@@ -7,7 +7,7 @@ var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/satellite-streets-v9',
   center: [-73.9192152, 40.8534642],
-  scrollWheelZoom: false,
+  scrollZoom: false,
   zoom: 14,
 });
 
@@ -113,19 +113,20 @@ var neighborHoodLookup = {
 map.on('style.load', function() {
 
   // add a button click listener that will control the map
-  $('.flyto').on('click', function(e) {
-    // pull out the data attribute for the neighborhood using query
-    var neighborhood = $(e.target).data('neighborhood');
+  $('.flyto').on('click',
+    function(e) {
+      // pull out the data attribute for the neighborhood using query
+      var neighborhood = $(e.target).data('neighborhood');
 
-    // this is a useful notation for looking up a key in an object using a variable
-    var center = neighborHoodLookup[neighborhood];
+      // this is a useful notation for looking up a key in an object using a variable
+      var center = neighborHoodLookup[neighborhood];
 
-    // fly to the neighborhood's center point
-    map.flyTo({
-      center: center,
-      zoom: 16.5
+      // fly to the neighborhood's center point
+      map.flyTo({
+        center: center,
+        zoom: 16.5
+      });
     });
-  });
 
   // this sets up the geojson as a source in the map
   map.addSource('pluto', {
