@@ -1,5 +1,6 @@
 
 ABOUT:
+
 For my final project, I made a website that visually aids in my capstone,
 an adaptive reuse project in the Bronx. Situated on the Bronx Community College (BCC),
 Gould Memorial Library is a nationally landmarked building that fell during the disinvestment
@@ -13,33 +14,30 @@ to inform our recommendations, gaining visual context of the landmarked site cou
 and having a comprehensive location via the website for all of this information would be
 helpful as well.
 
-TEMPLATE SOURCE:
-Template Name: Polaroyd
-Template URL: https://templatemag.com/polaroyd-bootstrap-agency-template/
-Author: TemplateMag.com
-License: https://templatemag.com/license/
-
 OUTLINE OF THIS PAGE:
 
 Long scroll web page. Removed template menu.
-Section 1: [DONE]
-	- About
-	- Quick Gallery
-Section 2: 
-  - Building History and Details
-	- Interactive Timeline with key dates
-Section 3:
-  - Current use of the building
-	- Current conditions of the building
-Section 4:
-  - Existing Conditions: Quick Facts
-    	- Map that displays relevant and interactive information about neighborhood
-	  	- Relevant Rezonings - Jerome ave shapefile
-	  	- Land use
-	  	- Popup of important buildings on campus, specifically Gould Memorial Library
+Section 1:Strategies for Adaptive Reuse at GML
+	- About - text
+	- Quick Explore Gallery - interactive
+Section 2: Building History
+	- Animated Timeline with key dates (animated, text)
+Section 3: Our process
+Section 4: Neighborhood Context Map
+	  	- Fly to: Gould Memorial Library
+			- Fly to: Relevant Rezoning on Jerome ave shapefile
+	  	- Land use & landmark status
  - Stationary maps
-	  	- Connectivity
-	  	- Zoning
-		  - Median income
+	  	- Connectivity in the area
+	  	- Zoning in the area
 Section 5: Recommendations
-	- Four uses: On hover there is a blurb about them
+			- Four uses: On hover there is a blurb about them
+
+
+			PROJECT REFERENCES:
+			Template Name: Polaroyd
+			Template URL: https://templatemag.com/polaroyd-bootstrap-agency-template/
+			Author: TemplateMag.com
+			License: https://templatemag.com/license/
+			BUTTON CODE:https://www.w3schools.com/howto/howto_css_button_group.asp
+			Vertical Timeline: Built upon the CodyHouse Framework https://github.com/CodyHouse/vertical-timeline/blob/master/README.md

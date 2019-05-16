@@ -6,7 +6,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamVsbGkxMCIsImEiOiJjanVkOXE0b3IwdDM4NDRxcmw3Z
 var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/satellite-streets-v9',
-  center: [-73.9260827,40.8526755],
+  center: [-73.9260827, 40.8526755],
   zoom: 14,
 });
 
@@ -19,74 +19,74 @@ var LandUseLookup = (code) => {
     case 1:
       return {
         color: '#f4f455',
-        description: '1 & 2 Family',
+          description: '1 & 2 Family',
       };
     case 2:
       return {
         color: '#f7d496',
-        description: 'Multifamily Walk-up',
+          description: 'Multifamily Walk-up',
       };
     case 3:
       return {
         color: '#FF9900',
-        description: 'Multifamily Elevator',
+          description: 'Multifamily Elevator',
       };
     case 4:
       return {
         color: '#f7cabf',
-        description: 'Mixed Res. & Commercial',
+          description: 'Mixed Res. & Commercial',
       };
     case 5:
       return {
         color: '#ea6661',
-        description: 'Commercial & Office',
+          description: 'Commercial & Office',
       };
     case 6:
       return {
         color: '#d36ff4',
-        description: 'Industrial & Manufacturing',
+          description: 'Industrial & Manufacturing',
       };
     case 7:
       return {
         color: '#dac0e8',
-        description: 'Transportation & Utility',
+          description: 'Transportation & Utility',
       };
     case 8:
       return {
         color: '#5CA2D1',
-        description: 'Public Facilities & Institutions',
+          description: 'Public Facilities & Institutions',
       };
     case 9:
       return {
         color: '#8ece7c',
-        description: 'Open Space & Outdoor Recreation',
+          description: 'Open Space & Outdoor Recreation',
       };
     case 10:
       return {
         color: '#bab8b6',
-        description: 'Parking Facilities',
+          description: 'Parking Facilities',
       };
     case 11:
       return {
         color: '#5f5f60',
-        description: 'Vacant Land',
+          description: 'Vacant Land',
       };
     case 12:
       return {
         color: '#5f5f60',
-        description: 'Other',
+          description: 'Other',
       };
     default:
       return {
         color: '#5f5f60',
-        description: 'Other',
+          description: 'Other',
       };
   }
 };
 
 // use jquery to programmatically create a Legend
 // for numbers 1 - 11, get the land use color and description
-for (var i=1; i<12; i++) {
+for (var i = 1; i < 12; i++) {
   // lookup the landuse info for the current iteration
   const landuseInfo = LandUseLookup(i);
 
@@ -104,7 +104,7 @@ var neighborHoodLookup = {
   'gml': [-73.915066, 40.8587175],
   'jeromeave': [-73.9042463, 40.8584254],
   'sboul': [-73.916989, 40.8558595],
-  'reset':  [-73.916989, 40.8558595]
+  'reset': [-73.916989, 40.8558595]
 }
 
 
@@ -121,7 +121,10 @@ map.on('style.load', function() {
     var center = neighborHoodLookup[neighborhood];
 
     // fly to the neighborhood's center point
-    map.flyTo({center: center, zoom: 17});
+    map.flyTo({
+      center: center,
+      zoom: 17
+    });
   });
 
   // let's hack the basemap style a bit
@@ -145,52 +148,52 @@ map.on('style.load', function() {
         type: 'categorical',
         property: 'landuse',
         stops: [
-            [
-              '01',
-              LandUseLookup(1).color,
-            ],
-            [
-              "02",
-              LandUseLookup(2).color,
-            ],
-            [
-              "03",
-              LandUseLookup(3).color,
-            ],
-            [
-              "04",
-              LandUseLookup(4).color,
-            ],
-            [
-              "05",
-              LandUseLookup(5).color,
-            ],
-            [
-              "06",
-              LandUseLookup(6).color,
-            ],
-            [
-              "07",
-              LandUseLookup(7).color,
-            ],
-            [
-              "08",
-              LandUseLookup(8).color,
-            ],
-            [
-              "09",
-              LandUseLookup(9).color,
-            ],
-            [
-              "10",
-              LandUseLookup(10).color,
-            ],
-            [
-              "11",
-              LandUseLookup(11).color,
-            ],
-          ]
-        }
+          [
+            '01',
+            LandUseLookup(1).color,
+          ],
+          [
+            "02",
+            LandUseLookup(2).color,
+          ],
+          [
+            "03",
+            LandUseLookup(3).color,
+          ],
+          [
+            "04",
+            LandUseLookup(4).color,
+          ],
+          [
+            "05",
+            LandUseLookup(5).color,
+          ],
+          [
+            "06",
+            LandUseLookup(6).color,
+          ],
+          [
+            "07",
+            LandUseLookup(7).color,
+          ],
+          [
+            "08",
+            LandUseLookup(8).color,
+          ],
+          [
+            "09",
+            LandUseLookup(9).color,
+          ],
+          [
+            "10",
+            LandUseLookup(10).color,
+          ],
+          [
+            "11",
+            LandUseLookup(11).color,
+          ],
+        ]
+      }
     }
   }, 'waterway-label')
 
@@ -203,7 +206,10 @@ map.on('style.load', function() {
       'line-opacity': 0.7,
       'line-color': 'gray',
       'line-opacity': {
-        stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
+        stops: [
+          [14, 0],
+          [14.8, 1]
+        ], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
       }
     }
   });
@@ -230,17 +236,17 @@ map.on('style.load', function() {
   });
 
   // when the mouse moves, do stuff!
-  map.on('mousemove', function (e) {
+  map.on('mousemove', function(e) {
     // query for the features under the mouse, but only in the lots layer
     var features = map.queryRenderedFeatures(e.point, {
-        layers: ['plutouh-fill'],
+      layers: ['plutouh-fill'],
     });
 
     // get the first feature from the array of returned features.
     var lot = features[0]
 
-    if (lot) {  // if there's a lot under the mouse, do stuff
-      map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
+    if (lot) { // if there's a lot under the mouse, do stuff
+      map.getCanvas().style.cursor = 'pointer'; // make the cursor a pointer
 
       var landuseDescription = LandUseLookup(parseInt(lot.properties.landuse)).description;
 
@@ -263,30 +269,37 @@ map.on('style.load', function() {
 })
 
 
-var popup = new mapboxgl.Popup({ offset: 10 })
+var popup = new mapboxgl.Popup({
+  offset: 10
+})
 
 var marker = new mapboxgl.Marker()
-  .setLngLat([-73.9141477,40.8587517])
+  .setLngLat([-73.9141477, 40.8587517])
   .addTo(map);
 
 if (plutouh.address === '1930 SEDGWICK AVENUE') {
-  new mapboxgl.Popup({ offset: 10 })
-  .setLngLat(-73.9141477,40.8587517)
-  .addTo(map);
+  new mapboxgl.Popup({
+      offset: 10
+    })
+    .setLngLat(-73.9141477, 40.8587517)
+    .addTo(map);
 }
 
 
 studentPizzaShops.forEach(function(studentData) {
 
 
-  if (lot) {  // if there's a lot under the mouse, do stuff
-    map.getCanvas().style.cursor = 'pointer';} // make the cursor a pointer
+  if (lot) { // if there's a lot under the mouse, do stuff
+    map.getCanvas().style.cursor = 'pointer';
+  } // make the cursor a pointer
 
   new mapboxgl.Marker({
-    color: thisStudentsColor,
-  })
+      color: thisStudentsColor,
+    })
     .setLngLat([studentData.lng, studentData.lat])
-    .setPopup(new mapboxgl.Popup({ offset: 40 })
+    .setPopup(new mapboxgl.Popup({
+        offset: 40
+      })
       .setText(`${studentData.name} says their favorite pizza shop is ${studentData.favoritepizzashop}`))
     .addTo(map);
 })

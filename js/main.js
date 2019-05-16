@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
   // PhotoStack Initi
-  if( $('#photostack-1').length) {
+  if ($('#photostack-1').length) {
     new Photostack(document.getElementById('photostack-1'), {
       callback: function(item) {
         //console.log(item)
@@ -15,7 +15,8 @@ jQuery(document).ready(function($) {
   });
 
   //Portfolio
-  var gridContainer = $('#grid-container'), filtersContainer = $('#filters-container');
+  var gridContainer = $('#grid-container'),
+    filtersContainer = $('#filters-container');
 
   // init cubeportfolio
   gridContainer.cubeportfolio({
@@ -37,7 +38,8 @@ jQuery(document).ready(function($) {
 
   // add listener for filters click
   filtersContainer.on('click', '.cbp-filter-item', function(e) {
-    var me = $(this), wrap;
+    var me = $(this),
+      wrap;
 
     // get cubeportfolio data and check if is still animating (reposition) the items.
     if (!$.data(gridContainer[0], 'cubeportfolio').isAnimating) {
@@ -69,13 +71,13 @@ jQuery(document).ready(function($) {
   });
 
   //Superslides
-	$('#slides').superslides({
-	    slide_easing: 'easeInOutCubic',
-	    slide_speed: 800,
-	    pagination: true,
-	    hashchange: false,
-	    scrollable: true,
-	    animation: 'fade'
-	});
+  $('#slides').superslides({
+    slide_easing: 'easeInOutCubic',
+    slide_speed: 800,
+    pagination: true,
+    hashchange: false,
+    scrollable: true,
+    animation: 'fade'
+  });
 
 });

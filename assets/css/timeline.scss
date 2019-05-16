@@ -1,12 +1,8 @@
 @import '../../../../codyhouse-framework/main/assets/css/_global.scss'; // ⚠️ make sure to import the CodyHouse framework
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700'); // custom font
-
 // -------------------------------------------------
-
 // Responsive Vertical Timeline - by CodyHouse.co
-
 // -------------------------------------------------
-
 :root {
   // colors
   @include defineColorHSL(--cd-color-1, 206, 21%, 24%); // Navy
@@ -14,20 +10,18 @@
   @include defineColorHSL(--cd-color-3, 207, 10%, 55%); // Grey
   @include defineColorHSL(--cd-color-4, 111, 51%, 60%); // Green
   @include defineColorHSL(--cd-color-5, 356, 53%, 49%); // Red
-  @include defineColorHSL(--cd-color-6, 47, 85%, 61%);  // Yellow
-
+  @include defineColorHSL(--cd-color-6, 47, 85%, 61%);
+  // Yellow
   // header
   --cd-header-height: 200px;
-
   // font
   --font-primary: 'Droid Serif', serif;
   --font-secondary: 'Open Sans', sans-serif;
 }
-
 @supports(--css: variables) {
   :root {
     @include breakpoint(md) {
-      --cd-header-height:  300px;
+      --cd-header-height: 300px;
     }
   }
 }
@@ -61,7 +55,8 @@
   position: relative;
   padding: var(--space-md) 0;
 
-  &::before { // this is the timeline vertical line
+  &::before {
+    // this is the timeline vertical line
     content: '';
     position: absolute;
     top: 0;
@@ -70,14 +65,11 @@
     width: 4px;
     background: #A79A74;
   }
-
-
   @include breakpoint(md) {
     &::before {
       left: 50%;
       transform: translateX(-50%);
     }
-
   }
 }
 
@@ -90,7 +82,6 @@
   &:last-child {
     margin-bottom: 0;
   }
-
   @include breakpoint(md) {
     &:nth-child(even) {
       flex-direction: row-reverse; // for even blocks -> lay out content from right to left
@@ -112,7 +103,6 @@
     width: 24px;
     height: 24px;
   }
-
   @include breakpoint(md) {
     width: 60px;
     height: 60px;
@@ -130,7 +120,6 @@
   background-color: #A79A74;
 }
 
-
 .cd-timeline__content {
   flex-grow: 1; // expand element so that it takes up all the available space inside its parent
   position: relative;
@@ -140,7 +129,8 @@
   padding: var(--space-md);
   box-shadow: 0 3px 0 var(--cd-color-2);
 
-  &::before { // triangle next to content block
+  &::before {
+    // triangle next to content block
     content: '';
     position: absolute;
     top: 16px;
@@ -151,7 +141,6 @@
   h2 {
     color: var(--cd-color-1);
   }
-
   @include breakpoint(md) {
     width: 45%;
     flex-grow: 0; // prevent element from growing inside its parent
@@ -160,11 +149,13 @@
     font-size: 0.8em;
     --line-height-multiplier: 1.2;
 
-    &::before { // triangle
+    &::before {
+      // triangle
       top: 24px;
     }
 
-    .cd-timeline__block:nth-child(odd) &::before { // change triangle direction
+    .cd-timeline__block:nth-child(odd) &::before {
+      // change triangle direction
       right: auto;
       left: 100%;
       @include triangle(right, 7px, var(--color-white));
@@ -174,7 +165,6 @@
 
 .cd-timeline__date {
   color: alpha(var(--cd-color-3), 0.7);
-
   @include breakpoint(md) {
     position: absolute;
     width: 100%;
@@ -188,9 +178,11 @@
     }
   }
 }
+@include breakpoint(md) {
+  // animations
 
-@include breakpoint(md) { // animations
-  .cd-timeline__img--hidden, .cd-timeline__content--hidden {
+  .cd-timeline__content--hidden,
+  .cd-timeline__img--hidden {
     visibility: hidden;
   }
 
@@ -206,22 +198,21 @@
     animation-name: cd-bounce-2-inverse;
   }
 }
-
-
 @keyframes cd-bounce-1 {
   0% {
     opacity: 0;
     transform: scale(0.5);
   }
+
   60% {
     opacity: 1;
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }
 }
-
 @keyframes cd-bounce-2 {
   0% {
     opacity: 0;
@@ -237,7 +228,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes cd-bounce-2-inverse {
   0% {
     opacity: 0;
