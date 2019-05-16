@@ -6,14 +6,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamVsbGkxMCIsImEiOiJjanVkOXE0b3IwdDM4NDRxcmw3Z
 var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/satellite-streets-v9',
-  center: [-73.9260827, 40.8526755],
+  center: [-73.9192152, 40.8534642],
   scrollWheelZoom: false,
   zoom: 14,
 });
 
-if (map.scrollWheelZoom) {
-  map.scrollWheelZoom.disable();
-}
+map.scrollWheelZoom.disable();
 
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
