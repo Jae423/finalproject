@@ -7,9 +7,10 @@ var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/satellite-streets-v9',
   center: [-73.9192152, 40.8534642],
-  scrollZoom: false,
   zoom: 14,
 });
+
+map.scrollZoom.disable();
 
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
