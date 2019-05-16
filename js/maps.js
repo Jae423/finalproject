@@ -11,8 +11,6 @@ var map = new mapboxgl.Map({
   zoom: 14,
 });
 
-map.scrollWheelZoom.disable();
-
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
 
