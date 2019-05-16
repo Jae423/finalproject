@@ -111,7 +111,7 @@ var neighborHoodLookup = {
 
 // we can't add our own sources and layers until the base style is finished loading
 map.on('style.load', function() {
-  
+
   // add a button click listener that will control the map
   $('.flyto').on('click', function(e) {
     // pull out the data attribute for the neighborhood using query
@@ -243,6 +243,21 @@ map.on('style.load', function() {
     }
   });
 
+  // add a layer for the highlighted lot
+
+  map.addLayer({
+    id: 'highlight-line',
+    type: 'line',
+    source: 'highlight-feature',
+    paint: {
+      'line-width': 3,
+      'line-opacity': 0.9,
+      'line-color': 'black',
+    }
+  });
+
+
+
   // when the mouse moves, do stuff!
   map.on('mousemove', function(e) {
     // query for the features under the mouse, but only in the lots layer
@@ -285,6 +300,7 @@ var marker = new mapboxgl.Marker()
   .setLngLat([-73.9141477, 40.8587517])
   .addTo(map);
 
+// how do i incorporate the click
 if (plutouh.address === '1930 SEDGWICK AVENUE') {
   new mapboxgl.Popup({
       offset: 10
@@ -292,22 +308,7 @@ if (plutouh.address === '1930 SEDGWICK AVENUE') {
     .setLngLat(-73.9141477, 40.8587517)
     .addTo(map);
 }
-
-
-studentPizzaShops.forEach(function(studentData) {
-
-
+}
   if (lot) { // if there's a lot under the mouse, do stuff
     map.getCanvas().style.cursor = 'pointer';
   } // make the cursor a pointer
-
-  new mapboxgl.Marker({
-      color: thisStudentsColor,
-    })
-    .setLngLat([studentData.lng, studentData.lat])
-    .setPopup(new mapboxgl.Popup({
-        offset: 40
-      })
-      .setText(`${studentData.name} says their favorite pizza shop is ${studentData.favoritepizzashop}`))
-    .addTo(map);
-})
