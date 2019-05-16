@@ -308,7 +308,7 @@ if (pluto.properties.address === '1930 SEDGWICK AVENUE') {
     .setLngLat(-73.9141477, 40.8587517)
     .addTo(map);
 }
-}
+
   if (lot) { // if there's a lot under the mouse, do stuff
     map.getCanvas().style.cursor = 'pointer';
   } // make the cursor a pointer
