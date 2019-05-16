@@ -236,7 +236,7 @@ map.on('style.load', function() {
       'fill-opacity': 0.4,
     },
     filter: ['==', 'PROJECT_NAME', 'Jerome Avenue Rezoning']
-});
+  });
 
   // add a layer for the highlighted lot
 
@@ -287,7 +287,9 @@ map.on('style.load', function() {
 })
 
 
-var popup = new mapboxgl.Popup({ offset: 40 })
+var popup = new mapboxgl.Popup({
+    offset: 40
+  })
   .setText('Gould Memorial Library');
 
 var marker = new mapboxgl.Marker()
@@ -296,6 +298,6 @@ var marker = new mapboxgl.Marker()
   .addTo(map);
 
 
-  if (lot) { // if there's a lot under the mouse, do stuff
-    map.getCanvas().style.cursor = 'pointer';
-  } // make the cursor a pointer
+if (lot) { // if there's a lot under the mouse, do stuff
+  map.getCanvas().style.cursor = 'pointer';
+} // make the cursor a pointer

@@ -24,14 +24,13 @@ Section 2: Building History
 	- Animated Timeline with key dates (animated, text)
 Section 3: Our process
 Section 4: Neighborhood Context Map
+			- Display land use
+			- Show address and landmark status
 	  	- Fly to: Gould Memorial Library
 			- Fly to: Relevant Rezoning on Jerome ave shapefile
-	  	- Land use & landmark status
- - Stationary maps
-	  	- Connectivity in the area
-	  	- Zoning in the area
+			- Fly to: BCC overall
 Section 5: Recommendations
-			- Four uses: On hover there is a blurb about them
+			- Four uses:  is a blurb about them
 
 
 			PROJECT REFERENCES:

@@ -3,6 +3,7 @@
 // -------------------------------------------------
 // Responsive Vertical Timeline - by CodyHouse.co
 // -------------------------------------------------
+
 :root {
   // colors
   @include defineColorHSL(--cd-color-1, 206, 21%, 24%); // Navy
@@ -180,7 +181,6 @@
 }
 @include breakpoint(md) {
   // animations
-
   .cd-timeline__content--hidden,
   .cd-timeline__img--hidden {
     visibility: hidden;
