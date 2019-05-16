@@ -12,7 +12,7 @@ var map = new mapboxgl.Map({
 
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
-
+map.scrollWheelZoom.disable();
 // a helper function for looking up colors and descriptions for NYC land use codes
 var LandUseLookup = (code) => {
   switch (code) {
