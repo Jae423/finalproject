@@ -111,8 +111,8 @@ var neighborHoodLookup = {
 
 // we can't add our own sources and layers until the base style is finished loading
 map.on('style.load', function() {
+  
   // add a button click listener that will control the map
-  // we have 4 buttons, but can listen for clicks on any of them with just one listener
   $('.flyto').on('click', function(e) {
     // pull out the data attribute for the neighborhood using query
     var neighborhood = $(e.target).data('neighborhood');
@@ -131,10 +131,16 @@ map.on('style.load', function() {
   // you can use map.getStyle() in the console to inspect the basemap layers
   map.setPaintProperty('water', 'fill-color', '#003366')
 
-  // this sets up the geojson as a source in the map, which I can use to add visual layers
+  // this sets up the geojson as a source in the map
   map.addSource('plutouh', {
     type: 'geojson',
     data: 'data/plutouh.geojson',
+  });
+
+  // this sets up the geojson as a source in the map
+  map.addSource('jerome', {
+    type: 'geojson',
+    data: 'data/jerome.geojson',
   });
 
   // add a custom-styled layer for tax lots
@@ -196,6 +202,8 @@ map.on('style.load', function() {
       }
     }
   }, 'waterway-label')
+
+
 
   // add an outline to the tax lots which is only visible after zoom level 14.8
   map.addLayer({
