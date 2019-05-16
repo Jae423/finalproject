@@ -233,8 +233,9 @@ map.on('style.load', function() {
     type: 'fill',
     source: 'jerome',
     paint: {
-      'fill-color': 'blue',
-    }
+      'fill-color': 'red',
+      'fill-opacity': 0.4,
+    },
     filter: ['==', 'PROJECT_NAME', 'Jerome Avenue Rezoning']
 });
 
