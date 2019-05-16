@@ -265,7 +265,6 @@ map.on('style.load', function() {
 if (plutouh.address === '1930 SEDGWICK AVENUE') {
   new mapboxgl.Popup({ offset: 10 })
   .setLngLat(-73.9141477,40.8587517)
-  .setHTML('O HAI')
   .addTo(map);
 }
 
